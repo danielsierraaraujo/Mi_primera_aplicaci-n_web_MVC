@@ -20,8 +20,34 @@ html {
 body {
   margin-bottom: 60px;
 }
+/* Con ayuda de Chatgpt */
 /* Editamos el CSS para mejorara la apariencia del css */
 .carousel-item img {
-    height: 500px;
+    height: 600px;
     object-fit: cover;
+}
+
+/* Estilos para el título en las captions */
+.carousel-caption h5 {
+    font-family: 'Arial', sans-serif; /* Fuente a utilizar */
+    color: #5533ff; /* Un tono dorado para asemejar a los colores de la liaPro */
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #000; /* Sombra para resaltar el texto */
+}
+
+/* Estilos para el párrafo en las captions */
+.carousel-caption p {
+    color: #FFFFFF; /* Texto blanco para contraste */
+    font-size: 1rem;
+    text-shadow: 1px 1px 2px #000;
+}
+
+.carousel-indicators [data-bs-target] {
+    background-color: #FFD700; /* Usamos un color dorado, puedes cambiarlo por otro representativo */
+}
+
+/* Opcional: Efecto hover para los controles de navegación */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: drop-shadow(1px 1px 2px #000); /* Sombra para darle mayor visibilidad */
 }

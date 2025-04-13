@@ -20,3 +20,8 @@ html {
 body {
   margin-bottom: 60px;
 }
+/* Editamos el CSS para mejorara la apariencia del css */
+.carousel-item img {
+    height: 500px;
+    object-fit: cover;
+}

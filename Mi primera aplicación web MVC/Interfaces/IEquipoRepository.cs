@@ -7,7 +7,7 @@ namespace Mi_primera_aplicación_web_MVC.Interfaces
         List<Equipo> DevuelveListadoEquipos();
         Equipo DevuelveEquipo(int Id);
         bool CrearEquipo();
-        bool ActualizarEquipo();
+        bool ActualizarEquipo(Equipo equipoActualizado);
         bool EliminarEquipo();
     }
 }

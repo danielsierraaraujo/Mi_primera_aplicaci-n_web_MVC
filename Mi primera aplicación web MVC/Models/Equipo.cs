@@ -19,12 +19,8 @@ namespace Mi_primera_aplicación_web_MVC.Models
         public int PartidosPerdidos { get; set; }
         [Range(0, 20)]
         public int PartidosEmpatados { get; set; }
-        public int Puntos {
-            get
-            {
-                int puntos = PartidosGanados * 3 + PartidosEmpatados * 1;
-                return puntos;
-            } 
-        }
+        public int Puntos { get; set; }
+
     }
 }
+

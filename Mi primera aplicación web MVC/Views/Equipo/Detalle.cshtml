@@ -3,38 +3,44 @@
 @{
     ViewData["Title"] = "Detalle del Equipo";
 }
-<h1>@Model.Nombre</h1>
 
-<table class="table table-bordered">
-    <tr>
-        <th>ID</th>
-        <td>@Model.Id</td>
-    </tr>
-    <tr>
-        <th>Nombre</th>
-        <td>@Model.Nombre</td>
-    </tr>
-    <tr>
-        <th>Partidos Jugados</th>
-        <td>@Model.PartidosJugados</td>
-    </tr>
-    <tr>
-        <th>Ganados</th>
-        <td>@Model.PartidosGanados</td>
-    </tr>
-    <tr>
-        <th>Perdidos</th>
-        <td>@Model.PartidosPerdidos</td>
-    </tr>
-    <tr>
-        <th>Empatados</th>
-        <td>@Model.PartidosEmpatados</td>
-    </tr>
-    <tr>
-        <th>Puntos</th>
-        <td>@Model.Puntos</td>
-    </tr>
-</table>
+<div class="container mt-4">
+    <div class="card shadow-lg p-4 rounded-4">
+        <div class="row align-items-center">
+            <div class="col-md-4 text-center">
+                <img src="~/images/@Model.Logo" alt="@Model.Nombre" class="img-fluid rounded-circle border border-4 border-primary" style="max-height: 200px;" />
+            </div>
+            <div class="col-md-8">
+                <h2 class="text-primary">@Model.Nombre</h2>
+                <p class="lead">Equipo participante en la LigaPro 2025. Actualmente cuenta con @Model.Puntos puntos acumulados en la tabla de posiciones.</p>
 
-<a asp-action="ListaEquipos" class="btn btn-secondary">Ver la Tabla</a>
+                <table class="table table-bordered table-striped mt-4">
+                    <tbody>
+                        <tr>
+                            <th>Partidos Jugados</th>
+                            <td>@Model.PartidosJugados</td>
+                        </tr>
+                        <tr>
+                            <th>Ganados</th>
+                            <td>@Model.PartidosGanados</td>
+                        </tr>
+                        <tr>
+                            <th>Empatados</th>
+                            <td>@Model.PartidosEmpatados</td>
+                        </tr>
+                        <tr>
+                            <th>Perdidos</th>
+                            <td>@Model.PartidosPerdidos</td>
+                        </tr>
+                        <tr>
+                            <th>Puntos</th>
+                            <td><strong>@Model.Puntos</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
 
+                <a asp-action="ListaEquipos" class="btn btn-secondary mt-3">← Volver a Equipos</a>
+            </div>
+        </div>
+    </div>
+</div>

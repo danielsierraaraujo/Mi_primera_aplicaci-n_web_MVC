@@ -11,6 +11,7 @@ namespace Mi_primera_aplicación_web_MVC.Models
         [Required]
         public string Nombre { get; set; }
         [Range(0, 20)]
+        public string Logo { get; set; }
         public int PartidosJugados { get; set; }
         [Range(0, 20)]
         public int PartidosGanados { get; set; }

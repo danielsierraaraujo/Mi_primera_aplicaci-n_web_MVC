@@ -19,5 +19,12 @@ namespace Mi_primera_aplicación_web_MVC.Controllers
             var equipo = repository.DevuelveInfoEquipo(Id);
             return View(equipo);
         }
+        public IActionResult Detalle(int Id)
+        {
+            EquipoRepository repository = new EquipoRepository();
+            var equipo = repository.DevuelveInfoEquipo(Id);
+            return View(equipo);
+        }
+
     }
 }

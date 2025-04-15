@@ -1,70 +1,47 @@
-﻿@model IEnumerable<Mi_primera_aplicación_web_MVC.Models.Equipo>
+﻿@model List<Mi_primera_aplicación_web_MVC.Models.Equipo>
 
 @{
-	ViewData["Title"] = "ListaEquipos";
+    ViewData["Title"] = "Tabla de Posiciones";
 }
 
-<h1>ListaEquipos</h1>
+<h1 class="text-center text-4xl font-bold mb-6">Tabla de Posiciones - LigaPro 2025</h1>
 
-<p>
-	<a class="btn btn-info" asp-action="Create">Create New</a>
-</p>
-<table class="table">
-	<thead>
-		<tr>
-			<th>
-				@Html.DisplayNameFor(model => model.Id)
-			</th>
-			<th>
-				@Html.DisplayNameFor(model => model.Nombre)
-			</th>
-			<th>
-				@Html.DisplayNameFor(model => model.PartidosJugados)
-			</th>
-			<th>
-				@Html.DisplayNameFor(model => model.PartidosGanados)
-			</th>
-			<th>
-				@Html.DisplayNameFor(model => model.PartidosPerdidos)
-			</th>
-			<th>
-				@Html.DisplayNameFor(model => model.PartidosEmpatados)
-			</th>
-			<th>
-				@Html.DisplayNameFor(model => model.Puntos)
-			</th>
-			<th></th>
-		</tr>
-	</thead>
-	<tbody>
-		@foreach (var item in Model)
-		{
-			<tr>
-				<td>
-					@Html.DisplayFor(modelItem => item.Id)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.Nombre)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.PartidosJugados)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.PartidosGanados)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.PartidosPerdidos)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.PartidosEmpatados)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.Puntos)
-				</td>
-				<td>
-					@Html.ActionLink("Edit", "Edit", new { id=item.Id }, new { @class = "btn btn-success" }) |
-				</td>
-			</tr>
-		}
-	</tbody>
+<table class="table-auto w-full border-collapse">
+    <thead class="bg-black text-white">
+        <tr>
+            <th class="p-2">Posición</th>
+            <th class="p-2">Nombre Equipo</th>
+            <th class="p-2">PartidosJugados</th>
+            <th class="p-2">PartidosGanados</th>
+            <th class="p-2">PartidosPerdidos</th>
+            <th class="p-2">PartidosEmpatados</th>
+            <th class="p-2">Puntos</th>
+            <th class="p-2">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            int posicion = 1;
+        }
+        @foreach (var item in Model)
+        {
+            <tr class="odd:bg-white even:bg-gray-100">
+                <td class="text-center font-bold">@posicion</td>
+                <td class="flex items-center gap-2 p-2">
+                    <img src="~/img/@item.Logo" alt="Logo @item.Nombre" width="30" height="30" style="object-fit:contain;" />
+                    @item.Nombre
+                </td>
+                <td class="text-center">@item.PartidosJugados</td>
+                <td class="text-center">@item.PartidosGanados</td>
+                <td class="text-center">@item.PartidosPerdidos</td>
+                <td class="text-center">@item.PartidosEmpatados</td>
+                <td class="text-center font-bold">@item.Puntos</td>
+                <td class="text-center">
+                    <a asp-controller="Equipo" asp-action="Edit" asp-route-id="@item.Id" class="btn btn-success">Editar</a>|
+                    <a asp-controller="Equipo" asp-action="Equipos" asp-route-id="@item.Id" class="btn btn-primary">Detalles Equipo</a>
+                </td>
+            </tr>
+            posicion++;
+        }
+    </tbody>
 </table>

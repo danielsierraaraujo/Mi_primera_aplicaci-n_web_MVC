@@ -22,6 +22,7 @@ namespace Mi_primera_aplicación_web_MVC.Controllers
             return View(equipo);
         }
 
+        //generado por chatgpt
         [HttpPost]
         public IActionResult Edit(Equipo equipo)
         {

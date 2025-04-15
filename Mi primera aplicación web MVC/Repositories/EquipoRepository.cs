@@ -56,8 +56,6 @@ namespace Mi_primera_aplicación_web_MVC.Repositories
 
             return true;
         }
-
-        // Métodos no implementados
         public bool CrearEquipo()
         {
             throw new NotImplementedException();
